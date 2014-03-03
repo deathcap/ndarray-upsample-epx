@@ -5,8 +5,8 @@ var epx = function(out, inp) {
   var nx = inp.shape[0];
   var ny = inp.shape[1];
 
-  var ishp = inp.shape;
-  var oshp = out.shape;
+  var w = nx - 1;
+  var h = ny - 1;
 
   for (var i = 0; i < nx; i += 1) {
     for (var j = 0; j < ny; j += 1) {
@@ -24,11 +24,11 @@ var epx = function(out, inp) {
        IF D==C AND D!=B AND C!=A => 3=C
       */
 
-      var p = inp.get(i    , j    );
-      var a = inp.get(i    , j - 1); // TODO: OOB
-      var b = inp.get(i + 1, j    );
-      var c = inp.get(i - 1, j    );
-      var d = inp.get(i    , j + 1);
+      var p =         inp.get(i    , j    );
+      var a = j > 0 ? inp.get(i    , j - 1) : p;
+      var c = i > 0 ? inp.get(i - 1, j    ) : p;
+      var b = i < w ? inp.get(i + 1, j    ) : p;
+      var d = j < h ? inp.get(i    , j + 1) : p;
 
       out.set(i * 2    , j * 2    , (c === a && c !== d && a !== b) ? a : p);
       out.set(i * 2 + 1, j * 2    , (a === b && a !== c && b !== d) ? b : p);
