@@ -5,13 +5,14 @@ var ndarray = require('ndarray');
 var zeros = require('zeros');
 
 var inp = ndarray(new Uint8Array([
-        0, 0, 0, 0,
-        0, 1, 1, 1,
-        0, 1, 0, 1,
-        0, 1, 1, 1]),
-      [4, 4]);
+        0, 0, 0, 0, 0,
+        0, 1, 1, 1, 0,
+        0, 1, 0, 1, 0,
+        0, 1, 1, 1, 0,
+        0, 0, 0, 0, 0]),
+      [5, 5]);
 
-var out = zeros([8, 8]);
+var out = zeros([10, 10]);
 
 epx(out, inp);
 
