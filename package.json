@@ -7,11 +7,13 @@
     "url": "git@github.com:deathcap/ndarray-upsample-epx.git"
   },
   "keywords": [
-    "voxel"
   ],
-  "dependencies": {
-  },
-  "peerDependencies": {
-  },
-  "license": "MIT"
+  "dependencies": {},
+  "peerDependencies": {},
+  "license": "MIT",
+  "devDependencies": {
+    "ndarray": "~1.0.10",
+    "zeros": "0.0.0",
+    "save-pixels": "~0.3.0"
+  }
 }
