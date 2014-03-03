@@ -24,26 +24,16 @@ var epx = function(out, inp) {
        IF D==C AND D!=B AND C!=A => 3=C
       */
 
-      var p = inp.get(i, j);
-      var a = inp.get(i, j - 1); // TODO: OOB?
-      var b = inp.get(i + 1, j);
-      var c = inp.get(i - 1, j);
-      var d = inp.get(i, j + 1);
+      var p = inp.get(i    , j    );
+      var a = inp.get(i    , j - 1); // TODO: OOB
+      var b = inp.get(i + 1, j    );
+      var c = inp.get(i - 1, j    );
+      var d = inp.get(i    , j + 1);
 
-      var o1 = p;
-      var o2 = p;
-      var o3 = p;
-      var o4 = p;
-
-      if (c === a && c !== d && a !== b) o1 = a;
-      if (a === b && a !== c && b !== d) o2 = b;
-      if (b === d && b !== a && d !== c) o4 = d;
-      if (d === c && d !== b && c !== a) o3 = c;
-
-      out.set(i * 2    , j * 2    , o1);
-      out.set(i * 2 + 1, j * 2    , o2);
-      out.set(i * 2    , j * 2 + 1, o3);
-      out.set(i * 2 + 1, j * 2 + 1, o4);
+      out.set(i * 2    , j * 2    , (c === a && c !== d && a !== b) ? a : p);
+      out.set(i * 2 + 1, j * 2    , (a === b && a !== c && b !== d) ? b : p);
+      out.set(i * 2    , j * 2 + 1, (b === d && b !== a && d !== c) ? d : p);
+      out.set(i * 2 + 1, j * 2 + 1, (d === c && d !== b && c !== a) ? c : p);
     }
   }
 };
