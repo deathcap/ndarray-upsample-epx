@@ -26,14 +26,14 @@ var epx = function(out, inp) {
 
       var p =         inp.get(i    , j    );
       var a = j > 0 ? inp.get(i    , j - 1) : p;
-      var c = i > 0 ? inp.get(i - 1, j    ) : p;
       var b = i < w ? inp.get(i + 1, j    ) : p;
+      var c = i > 0 ? inp.get(i - 1, j    ) : p;
       var d = j < h ? inp.get(i    , j + 1) : p;
 
       out.set(i * 2    , j * 2    , (c === a && c !== d && a !== b) ? a : p);
       out.set(i * 2 + 1, j * 2    , (a === b && a !== c && b !== d) ? b : p);
-      out.set(i * 2    , j * 2 + 1, (b === d && b !== a && d !== c) ? d : p);
-      out.set(i * 2 + 1, j * 2 + 1, (d === c && d !== b && c !== a) ? c : p);
+      out.set(i * 2 + 1, j * 2 + 1, (b === d && b !== a && d !== c) ? d : p);
+      out.set(i * 2    , j * 2 + 1, (d === c && d !== b && c !== a) ? c : p);
     }
   }
 };
