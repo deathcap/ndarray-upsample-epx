@@ -11,10 +11,11 @@
   "peerDependencies": {},
   "license": "MIT",
   "scripts": {
-    "start": "node demo.js"
+    "test": "node test.js"
   },
   "devDependencies": {
     "ndarray": "~1.0.10",
-    "zeros": "0.0.0"
+    "zeros": "0.0.0",
+    "tape": "~2.6.0"
   }
 }
