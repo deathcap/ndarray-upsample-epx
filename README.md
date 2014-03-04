@@ -1,6 +1,8 @@
 # ndarray-upsample-epx
 
-EPX (Eric's Pixel Expansion) scaling algorithm
+EPX (Eric's Pixel Expansion) scaling algorithm implementation in JavaScript
+
+[![Build Status](https://travis-ci.org/deathcap/ndarray-upsample-epx.png)](https://travis-ci.org/deathcap/ndarray-upsample-epx)
 
 Usage:
     
