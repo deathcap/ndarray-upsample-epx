@@ -1,0 +1,20 @@
+{
+  "name": "ndarray-upsample-epx-example",
+  "description": "EPX scaling algorithm for pixel art example",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:deathcap/ndarray-upsample-epx.git"
+  },
+  "keywords": [],
+  "dependencies": {
+    "luminance": "~1.0.2",
+    "save-pixels": "~0.3.0",
+    "zeros": "0.0.0",
+    "lena": "~1.0.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js > output.png"
+  }
+}

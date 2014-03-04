@@ -30,12 +30,3 @@ show(inp);
 console.log();
 show(out);
 
-
-//require('save-pixels')(inp, 'png').pipe(process.stdout);
-
-/* TODO
-var lena = require('luminance')(require('lena'));
-var x = require('zeroes')([256*2,256*2]);
-require('./')(x, lena);
-require('save-pixels')(x, 'png').pipe(process.stdout);
-*/
